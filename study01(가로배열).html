@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>가로나열법</title>
+        <style>
+            /* table을 이용한 가로배치의 경우 border-spacing과 td의 padding을 조절해야 빈공간이 없다 */
+            table {
+                margin: 0 auto;
+                border: 10px solid black;
+                border-spacing: 0;
+            }
+
+            /* first box */
+
+            table div {
+                width: 50px;
+                height: 50px;
+            }
+
+            td {
+                padding: 0;
+            }
+
+            .red {
+                background-color: rgba(255, 0, 0, 0.5);
+            }
+
+            .blue {
+                background-color: rgba(0, 0, 255, 0.5);
+            }
+
+            .green {
+                background-color: rgba(0, 255, 0, 0.5);
+            }
+
+            .yellow {
+                background-color: rgba(255, 255, 0, 0.5);
+            }
+
+            #f {
+                border: 10px solid red;
+                width: 200px;
+                margin: 0 auto;     /* width값이 없으면 적용이 안된다 */
+            }
+
+            /* second box */
+
+            #f div {
+                width: 50px;
+                height: 50px;
+                float: left;
+            }
+
+            /* float을 시키면 배경면적이 사라지는 효과가 발생한다 */
+            /* 아래 clearfix소스를 배경 after위치에 적용하면 배경면적을 유지할 수 있다 */
+            /* 본 방식으로 처리하게 되면 반응형을 제작할 때 유리하게 사용할 수 있다 */
+
+            #f::after {     /* 클리어픽스 */
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            /* inline태그들은 line을 유지하는 성향이 있어서 가로로 배치하기 편리하지만 */
+            /* 면적을 가질 수 없다 */
+
+            
+
+            /* text */
+            /* b {
+                width: 500px;
+                height: 500px;
+                background-color: blue;
+            } */
+
+            /* third box */
+
+            #i {
+                border: 10px solid blue;
+                width: 200px;
+                margin: 0 auto;
+                font-size: 0;
+            }
+
+            #i div {
+                width: 50px;
+                height: 50px;
+                display: inline-block;  /* inline태그처럼 가로로 배치되면서도 block태그처럼 면적을 가지고 있도록 하게하는 속성*/
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><div class="red"></div></td>
+                <td><div class="blue"></div></td>
+                <td><div class="green"></div></td>
+                <td><div class="yellow"></div></td>
+            </tr>
+        </table>
+
+        <div id="f">
+            <div class="red"></div>
+            <div class="blue"></div>
+            <div class="green"></div>
+            <div class="yellow"></div>
+        </div>
+
+        <div id="i">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+        </div>
+
+        <!-- 동해물과 <b>백두산</b>이 마르고 닳도록 <p>하느님</p>이 보우하사 우리나라 만세
+        <span>무궁화</span>
+        <span>삼천리</span> -->
+    </body>
+</html>

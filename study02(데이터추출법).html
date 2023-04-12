@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>데이터 추출법</title>
+        <style>
+            fieldset {
+                width: 400px;
+                margin: 0 auto;     /* width값을 주지 않으면 적용X */
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>      <!-- blocktag -->
+            <legend>체크박스</legend>
+            <!-- input을 구분하기 위하여 value 부여 -->
+            <input type="checkbox" value="JAVA">JAVA     <!-- 단일태그는 사용자가 입력하는 태그 -->
+            <input type="checkbox" value="Andriod">Andriod
+            <input type="checkbox" value="CSS">CSS
+            <br>
+            <input type="checkbox" value="HTML">HTML
+            <input type="checkbox" value="IOT">IOT
+            <input type="checkbox" value="JavaScript">JavaScript
+        </fieldset>
+        <fieldset>
+            <legend>셀렉트</legend>
+            <select>
+                <option value="JAVA">JAVA</option>
+                <option value="Andriod">Andriod</option>
+                <option value="CSS">CSS</option>
+                <option value="HTML">HTML</option>
+                <option value="IOT">IOT</option>
+                <option value="JavaScript">JavaScript</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>전송</legend>
+            <input id="btn" type="button" value="전송">
+        </fieldset>
+        <fieldset>
+            <legend>출력영역</legend>
+            <p id="resultCheck">체크내용 : </p>
+            <p id="resultSelect">셀렉트내용 : </p>
+        </fieldset>
+        <script>
+            var button = document.getElementById("btn");
+            button.addEventListener("click", function(){    /* 버튼을 클릭했을 때 동작 */
+                /* fieldset태그 불러오기 */
+                var checks = document.getElementsByTagName("fieldset");
+
+                /* input태그 불러오기 */
+                var inner = checks[0].getElementsByTagName("input");
+
+                /* #result의 내용을 변경 */
+                var str = "체크내용 : ";
+
+                /* checkbox 불러오기 */
+                for(var i = 0; i < inner.length; i++){
+                    if(inner[i].checked){   /* check가 되어있는 것을 추출하는 for문 */
+                        str += inner[i].value + " ";    /* 체크된 항목의 value를 for문으로 추가 */
+                    }
+                }
+
+                /* resultCheck에 넣어주기 */
+                document.getElementById("resultCheck").innerHTML = str;  /* p태그 안의 내용을 str로 변경 */
+
+                /* select태그 불러오기 */
+                var sel = document.getElementsByTagName("select")[0].value;
+
+                /* resultSelect에 sel의 내용을 표시 */
+                document.getElementById("resultSelect").innerHTML = "셀렉트내용 : " + sel;
+                
+
+                
+                
+
+
+            
+
+            });
+        </script>
+    </body>
+</html>
