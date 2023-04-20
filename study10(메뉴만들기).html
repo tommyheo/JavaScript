@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴만들기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            font-size: 0;
+        }
+        .menu {
+            width: 205px;
+            height: 40px;
+            background-color: pink;
+            margin: 50px auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            width: 50px;
+            height: 40px;
+            background-color: gray;
+            color: white;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+            font-size: 12px;
+            border: 1px solid black;
+            border-left: 0;
+        }
+
+        li:hover {
+            color: white;
+            background-color: black;
+        }
+
+        li:first-child {
+            border-left: 1px solid black;
+        }
+
+        .box {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            background-color: aquamarine;
+            border: 1px solid black;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 실제는 버튼모양의 이미지를 넣는 경우가 많다 -->
+    <div id="wrap">
+        <div class="menu">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+            </ul>
+        </div>
+        <div class="box">가</div>
+        <div class="box">나다라</div>
+        <div class="box">다</div>
+        <div class="box">라</div>
+    </div>
+</body>
+</html>

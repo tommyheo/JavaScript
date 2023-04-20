@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>플로트처리</title>
+    <style>
+        div {
+            width: 70px;
+            height: 70px;
+            background-color: orange;
+            margin-right: 0;
+            float: left;
+            /* display: inline; : block요소의 크기를 무시하고 inline요소로 만들어줌 */
+            /* float를 쓰게 되면 margin이 없는 것처럼 요소의 크기를 유지한채 오른쪽이나 왼쪽으로 배치할 수 있음 */
+        }
+
+        span {      /* inline요소는 width와 height를 가질 수 없다 */
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            /* inline요소를 float 시키면 width와 height의 값을 가질 수 있다 */
+            /* inline요소가 float요소로 변경되기 때문 */
+            float: left;
+        }
+
+        /* float을 사용하여 가로 배치가 가능하다 */
+        /* 반응형 레이아웃을 만들어야 할 때 사용자가 밑으로 스트롤 하면서 볼 수 있도록 고의적으로 레이아웃 요소를 밑으로 밀어내야하는 경우가 있는데 이 때 사용 */
+        /* 화폐박물관 사이트 참고 */
+    </style>
+</head>
+<body>
+    <div>블락요소</div>
+    <span>인라인요소</span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur malesuada eros eu consectetur. Praesent tincidunt enim sapien. Donec tempor felis at est lobortis, nec eleifend tellus efficitur. Nunc faucibus a neque ut sollicitudin. Curabitur at aliquet enim. Nullam erat tellus, elementum at maximus quis, dignissim id arcu. Quisque lacinia id elit vitae vehicula. Nullam tempor est ut aliquam blandit. Morbi dictum diam id metus vehicula lacinia. Nulla facilisi. Pellentesque ac finibus quam.
+
+    Maecenas ultrices ligula nec ex fringilla dignissim. Quisque non aliquam velit. Suspendisse in tellus eu tellus vestibulum euismod. Suspendisse potenti. Praesent ac mauris at mi congue tristique sed nec nisi. Suspendisse potenti. Nulla sed tempus metus, ac vestibulum leo. Mauris volutpat odio quis augue porta faucibus. Vivamus lacus libero, ullamcorper vitae felis a, gravida vestibulum sem. Nam tempus, nibh quis euismod egestas, ante ante aliquam augue, vel iaculis dolor velit sed nisl. Aenean at tellus at massa dapibus aliquam. Donec imperdiet finibus fringilla. Sed pulvinar ligula velit, non faucibus eros aliquam sit amet.
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nibh odio, cursus at diam nec, malesuada suscipit risus. Quisque ac neque id felis posuere rutrum. Phasellus faucibus porta augue. Etiam sodales faucibus pretium. Cras commodo non libero in eleifend. Curabitur cursus eu dui quis vulputate. Nulla ac est nulla. Ut vel ex sit amet lacus vulputate euismod. Cras hendrerit scelerisque dapibus. Sed suscipit molestie augue, nec lobortis ligula scelerisque sit amet. Donec vitae malesuada mauris, et sagittis turpis. Phasellus efficitur convallis tellus, eu mollis sem varius vel. Proin gravida nibh facilisis eros dapibus mattis.
+
+    Suspendisse ac faucibus sapien. Fusce venenatis eros dui, et tempor purus posuere at. Mauris justo arcu, vehicula eu justo nec, imperdiet euismod ex. Sed non porta erat. Nulla vulputate augue sed magna aliquam, ac rutrum velit tempor. Quisque vel fermentum felis, vel rutrum elit. Phasellus ultricies leo mi, at cursus tellus fermentum id. Aliquam imperdiet posuere lacinia. Vestibulum molestie hendrerit felis sit amet commodo.
+
+    Maecenas tristique sagittis risus vitae pulvinar. Curabitur dictum quam sed dolor maximus fermentum. Donec varius viverra augue, quis scelerisque nisi maximus a. Nulla facilisi. Nullam interdum turpis nec vehicula lacinia. Maecenas et imperdiet enim, non aliquet erat. Donec velit sapien, elementum eget consequat sed, condimentum eu sem. Pellentesque eu turpis vitae lacus suscipit finibus id et magna. Donec ut ante a mi vehicula interdum eu vitae sapien. Morbi posuere risus a nibh condimentum scelerisque. Etiam hendrerit augue nunc, id rhoncus nulla aliquam vitae. Vestibulum libero urna, molestie ac felis non, blandit consectetur tortor.
+
+    Aenean id nunc sed mauris consequat ultricies. Suspendisse tincidunt venenatis felis, nec scelerisque dui placerat a. Quisque luctus leo nec diam scelerisque scelerisque. Nulla semper odio sit amet porttitor vestibulum. Curabitur lectus odio, vulputate non tellus quis, bibendum tincidunt enim. Morbi eros purus, interdum vel justo at, dictum tincidunt ligula. Nulla eleifend velit velit, vel congue leo sagittis efficitur. Nulla neque massa, ultricies quis lobortis ultrices, pulvinar sit amet lacus. Etiam ac odio egestas eros interdum accumsan vel ornare quam. Phasellus tempus tortor eu tortor feugiat imperdiet.
+
+    Etiam lobortis, enim nec euismod imperdiet, justo magna fermentum quam, luctus lacinia augue lorem ac velit. Suspendisse potenti. In sagittis tristique purus. Proin porta, elit at pellentesque iaculis, ligula orci consequat arcu, a molestie eros nibh sit amet libero. Maecenas suscipit vulputate diam, nec efficitur mauris vulputate at. Etiam commodo sit amet ipsum quis vulputate. Suspendisse lobortis tempus ante sit amet maximus.
+
+    Aliquam eu augue ac elit elementum ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc cursus enim leo, ut ullamcorper arcu congue sed. Duis varius congue lacus, nec mattis purus gravida eu. In diam nulla, placerat vitae massa ut, viverra pulvinar quam. Nunc ullamcorper nunc eget leo blandit, sit amet volutpat tortor accumsan. Fusce euismod lectus dolor, ac scelerisque elit varius at. Vestibulum malesuada eleifend bibendum. Curabitur gravida enim scelerisque arcu ultrices, non sollicitudin augue luctus. Etiam congue leo nec ex eleifend mollis.
+
+    Pellentesque suscipit commodo ipsum et scelerisque. Donec sed ornare tellus, et aliquet elit. Aenean semper mattis tristique. Pellentesque viverra aliquet tortor ut porttitor. Nulla blandit mauris vel urna placerat, eu aliquet justo commodo. Integer hendrerit nibh nec quam ultrices dictum. Integer ullamcorper ultricies blandit. Vivamus ut placerat neque. Fusce auctor dui orci, in ornare mi aliquam fermentum. Curabitur pulvinar congue mauris, vitae ultricies massa consectetur a.
+
+    Aenean eget diam nec magna tincidunt varius. Ut faucibus ex nulla, non iaculis risus congue et. Aliquam tempor blandit venenatis. Etiam vitae malesuada massa. Vestibulum aliquam mi in aliquet aliquam. Praesent feugiat gravida ex vel fermentum. Morbi augue ipsum, venenatis eget risus ut, dapibus malesuada elit.
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 개요</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id="top">
+            <!-- textNode 위치 -->
+            <h1>첫번째 h1</h1>
+            <!-- textNode 위치 -->
+            <h1>두번째 h1</h1>
+            <!-- textNode 위치 -->
+            <h1>세번째 h1</h1>
+            <!-- textNode 위치 -->
+            <p class="last">마지막 p</p>
+            <!-- textNode 위치 -->
+            <!-- top의 childNode의 개수 : 9개 -->
+        </div>
+        <div id="center">
+            <ul>
+                <li id="first" class="test" style="color:red;">첫번째 li</li>
+                <li>두번째 li</li>
+                <li class="last">세번째 li</li>
+            </ul>
+        </div>
+        <div id="bottom">
+            <h2>첫번째 h2</h2>
+            <p>두번째 h2</p>
+            <h2 class="last">세번째 h2</h2>
+        </div>
+    </div>
+    <script>
+        console.log("==================== 문서전체 ======================");
+
+        var d = document;   //문서 전체
+        console.log(d);
+
+        console.log("==================== id요소 가져오는 방법 ======================");
+        
+        /* id요소 가져오는 방법 */
+        var b = d.getElementById("bottom");     //#bottom
+        console.log(b);
+
+        var t = d.getElementById("top");        //#top
+        console.log(t);
+
+        console.log("================== class요소 가져오는 방법 ====================");
+        
+        /* class요소 가져오는 방법 */
+
+        var last = d.getElementsByClassName("last");    //.last
+        // console.log(last[0]);
+        // console.log(last[1]);
+        // console.log(last[2]);
+        // console.log(last[3]);       //undefined
+
+        for(var i = 0; i < last.length; i++){
+            console.log(last[i]);
+            // last[i].addEventListener();  //for문을 사용하여 한번에 이벤트 부여도 가능
+        }
+
+        console.log("==================== tag요소 가져오는 방법 ======================");
+        
+        /* Tag요소 가져오는 방법 */
+        var h1 = d.getElementsByTagName("h1");      //h1
+        for(var i = 0; i < h1.length; i++){
+            console.log(h1[i]);
+        }
+
+
+        console.log("================== textNode 가져오는 방법 ====================");
+
+        console.log(h1[0].firstChild.nodeValue);  //첫번째 h1
+        /* 
+            태그 내부에 작성된 문자 데이터는 해당 Element가 가지는 것이 아니고 
+            Element내부에 TextNode가 보유하고 있는 것이다.
+            태그 사이사이에 문자를 저장하기 위한 TextNode가 자리잡고 있다
+            * X 5,000,000
+        */
+
+        var ul = d.getElementsByTagName("ul")[0];       //index번호로 특정하지 않으면 배열형태로 나오게 됨
+        // console.log(ul.firstChild);     //#text     //html상에서는 li가 나와야하지만 textNode가 나오게 됨
+        var childNodes = ul.childNodes;  //childNodes : ul 내부에 노드들을 합쳐둔 배열
+        console.log(ul.childNodes);     //ul에 속한 node를 전부 뽑을 수 있음
+
+        for(var i = 0; i < ul.childNodes.length; i++){
+            if(childNodes[i].nodeType == 1){       //Element요소 추출 조건
+                console.log(childNodes[i]);    //textNode를 제외한 Element요소 추출
+            }
+        }
+
+
+
+        // attribute : 속성, 해당 태그가 가지고 있는 속성
+        // 속성을 부여하면 같은 카테고리에 있는 다른 객체를 구별할 수 있음
+        // console.log(childNodes[1].attributes);      //Element의 attribute
+        // console.log(childNodes[1].attributes.getNamedItem("id"));
+        childNodes[1].attributes.getNamedItem("id").value="none";   //id를 first에서 none으로 바꿔주는 명령
+        
+        // DOM을 통해서 정보를 바꿀 수 있다
+    </script>
+</body>
+</html>

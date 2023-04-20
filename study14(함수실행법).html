@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>함수실행법</title>
+</head>
+<body>
+    <input type="button" value="온클릭" onclick="test()"><br>   
+    <!-- onclick보다는 이벤트를 부여하여 사용하는 것이 좋다 -->
+    <input type="button" value="이벤트" id="A"><br>
+    <input type="button" value="익명함수" id="B"><br>
+    <!-- onclick이 되었을 때 함수 test 실행 -->
+    <!-- 
+        # input 태그가 단태그인 이유 
+        사용자의 입력이 필요한 정보이므로 단태그이다
+    -->
+
+    <h1>이거 눌러보세요</h1>
+    <script>
+        /* JavaScript는 순서대로 실행이 된다 */
+
+        /* 
+            alert("실행확인");
+            alert("순서대로 실행됩니다.");
+         */
+
+
+        // 함수는 재사용을 하기 위하여 사용
+
+        function test(){    //함수 test
+            alert("실행확인");
+            alert("순서대로 실행됩니다");
+            return "콜라";  //return값을 주면 return값의 내용을 주고 없으면 undefined 반환
+        }
+
+        /* test();     //test 함수 실행 */
+
+        /* #A를 변수 btn에 불러들이는 명령 */
+        var btn = document.getElementById("A");     /* id가 없어도 불러들일 줄 알아야한다 */
+        // console.log(btn);
+
+        // Element.addEventListener("String", function(){});
+
+        /* 변수 btn에 이벤트를 주는 명령 */
+        btn.addEventListener("click", test);    //함수이름에 ()를 넣게 되면 실행 결과값을 보여주기 때문에 () 넣지 않는다
+
+        /* 
+            # addEventListener의 함수에 ()를 안넣는 이유 
+            var result = test();
+            console.log(result);    //undefined(return값이 없는 경우(java의 void와 같다))
+            undefined : return값이 없는 경우
+        */
+
+        /* 익명함수를 사용하는 경우 */  //교수님이 선호하시는 방법
+        var B = document.getElementById("B");   //#B를 JavaScript로 불러들이는 명령
+        B.addEventListener("click", function(){     //B를 눌렀을 때 실행되는 함수
+            alert("익명함수를 이용한 실행확인");
+        });
+
+        /* h1을 불러들이는 명령 */
+        var h = document.getElementsByTagName("h1")[0];
+        // console.log(h);
+
+        h.addEventListener("click", function(){
+            alert("h1이 클릭되었습니다");
+        });
+    </script>
+</body>
+</html>

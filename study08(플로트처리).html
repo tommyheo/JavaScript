@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>플로트처리</title>
+    <style>
+        .box {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* border는 각 제조사의 화면에 따라 보이는 것이 다를 수 있으니 사용시 주의해야한다 */
+        /* ex) 레티나 디스플레이(애플) */
+
+        #wrap {
+            width: 200px;
+            border: 10px solid purple;
+        }
+
+
+        /* clearfix : float된 요소의 부모 요소의 :after위치에 적용 */
+        /* 거의 대부분의 float으로 인한 배경 소실 문제를 해결해줌 */
+        #wrap::after {      /* clearfix */
+            content: "";
+            display: block;     /* content가 inline요소이기 때문에 면적을 가지려면 block요소로 바꾸어야 한다 */
+            clear: both;    /* 해당 요소 이전까지 데이터까지만 float해주고 다시 밑으로 float을 사용하여 시작해달라는 속성 */
+        }
+
+        #red {
+            background-color: red;
+            float: left;    /* 원래 나와야할 위치에서 띄우고 나머지 float요소들은 옆으로 나란히 붙는다 */
+        }
+
+        #green {
+            background-color: green;
+            float: left;    
+        }
+
+        #blue {
+            background-color: blue;
+            float: left;
+        }
+
+        #yellow {
+            background-color: yellow;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="red" class="box"></div>
+        <div id="green" class="box"></div>
+        <div id="blue" class="box"></div>
+        <div id="yellow" class="box"></div>
+        <!-- wrap::after = 이 위치에 고정점을 주면 배경이 면적을 유지하도록 할 수 있다. -->
+    </div>
+</body>
+</html>

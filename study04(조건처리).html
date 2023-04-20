@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>조건처리</title>
+</head>
+<body>
+    <script>
+        /* js는 한줄씩 읽어내려가면서 명령 수행 */
+        /* 조건 : condition */
+        var number = 10;   
+
+        number -= 200;      //증감연산
+        /* A-=B     A=A-B       number = number-200 */
+        console.log(number);
+        number =- 200;      //-200의 데이터를 가진 number
+        console.log(number);
+
+        if(Array.length){      //==를 =으로 적으면 실행이 된다.
+            console.log("조건이 참이므로 실행합니다.");
+        }
+
+        //자바스크립트의 조건처리
+        //자바스크립트에서의 조건처리이므로 java등에서는 사용하지 않는다.(다른 언어에서는 type missmatch 오류가 난다)
+        console.log(Boolean(""));    //속이 비어있는 문자열, false이다.
+        console.log(Boolean());  //내용물이 존재하지 않는 경우, false이다. (undefined = 데이터타입이 없는 것(아예 정의가 되지 않는 것))
+        console.log(Boolean(0));    //숫자 0인 경우, false이다.
+        console.log(Boolean(null));     //값이 null인 경우, false (null = 공백조차 없는 완벽하게 비어있는 상태)
+        console.log(undefined); //값이 undefined인 경우, false이다.
+        console.log("========================================================================");
+        console.log(Boolean("가"));     //띄어쓰기를 포함하여 문자가 하나라도 있는 문자열, true
+        console.log(Boolean(-200));     //음수를 포함하여 '0'이 아닌 모든 숫자, true
+        console.log(Boolean(1<3));      //**연산의 결과가 true인 경우, true (비교연산자를 사용하면 오류를 안 낼수 있다)
+
+
+
+/*         if(condition1){
+
+        } else if(condition2){      //if else if문은 동시에 실행될 수 있는 가능성이 없고 하나만 써야한다면 else if문을 쓴다
+
+        }
+
+        //동시에 기능을 써야한다면 if문을 다수 만들어서 쓴다. */
+
+        //다음 test변수 내부의 값이 홀수인지 짝수인지 판별하는 코드를 완성하시오
+
+        var test = 0;
+
+        /* else if */
+        if(test == 0){      //js는 위에서 내려가면서 한줄씩 읽어내려가면서 조건을 확인하므로 0을 골라내려면 맨 윗줄에 적어줘야한다.(조건이 작은 것부터 큰 순으로 코드 작성!)
+            console.log("0입니다.");
+        } 
+        if(test%2 == 1){    //동시에 실행을 시키고 싶으면 if를 다수로 만들면 동시에 실행가능!!!
+            console.log("홀수입니다.");
+        } else if(test%2 == 0){
+            console.log("짝수입니다.");
+        }
+
+        //0입니다.
+        //짝수입니다.
+        
+        if(test%2 == 1){    
+            console.log("홀수입니다.");
+        } else if(test%2 == 0 && test != 0){    //&&연산자를 사용하여 조건을 만들어주면 0을 골라낼 수 있다
+            console.log("짝수입니다.");
+        } else {
+            console.log("0입니다.");
+        }
+
+        //0입니다.
+
+        
+        /* if else */
+        var test2 = 2557;
+        if(test2%2 == 0){    
+            console.log("짝수");
+        } else {
+            console.log("홀수");
+        }
+
+        //홀수
+    </script>
+</body>
+</html>

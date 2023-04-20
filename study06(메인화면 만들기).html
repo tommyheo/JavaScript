@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>메인화면 만들기</title>
+    <style>
+        #wrap {     
+            /* 컨텐츠가 얼마나 들어올지 아무도 모르기 때문에 height값을 적지 않는다 */
+            /* height값을 지정하면 오히려 나중에 컨텐츠가 늘어나게 되면 레이아웃이 틀어진다 */
+            width: 400px;  /* naver의 width: 1200px;*/
+            background-color: red;
+            margin: 0 auto;     /* margin: 0 auto 사용시 width값이 꼭 있어야한다 */
+        }
+
+        #A {
+            width: 100px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        #B {
+            width: 200px;
+            height: 300px;
+            background-color: green;
+            margin: 0 auto;
+            /* 1개 : 상하좌우 */
+            /* 2개 : 상하 좌우 */
+            /* 3개 : 위 좌우 아래 */
+            /* 4개 : 위 오른쪽 아래 왼쪽 */
+        }
+
+        #C {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="A"></div>
+        <div id="B"></div>
+        <div id="C"></div>
+    </div>
+    <script>
+        /* 
+            # 화면을 만들 때는 보통 div와 span을 가지고 만든다고 생각을 하면 된다
+                div : 대표적인 block태그
+                span : 대표적인 inline태그
+
+            # 홈페이지는 한줄씩 만들어야 한다(block태그 사용해서)
+            
+
+            # block태그는 넓이를 지정하지 않으면 한줄을 다 차지
+        */
+    </script>
+</body>
+</html>
